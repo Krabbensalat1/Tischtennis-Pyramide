@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tischtennis-Pyramide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tischtennis-Pyramide</h1>
+    <div id="pyramid"></div>
+
+    <h2>Spieler hinzufügen</h2>
+    <input type="text" id="playerName" placeholder="Spielername">
+    <button onclick="addPlayer()">Hinzufügen</button>
+
+    <h2>Spielergebnis eintragen</h2>
+    <select id="player1" onchange="updateChallengers()"></select> vs. <select id="player2"></select>
+    <button onclick="recordMatch()">Spiel eingeben</button>
+
+    <h2>Spieler-Statistiken</h2>
+    <div id="stats"></div>
+
+    <h2>Leaderboard (Top 10)</h2>
+    <div id="leaderboard"></div>
+
+    <h2>Gesamtrangliste</h2>
+    <table id="rankingTable">
+        <thead>
+            <tr>
+                <th>Platz</th>
+                <th>Spieler</th>
+                <th>Siege</th>
+                <th>Niederlagen</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Verwaltung</h2>
+    <button onclick="resetData()">❌ Reset Alles Löschen</button>
+    <button onclick="resetSeason()">🔄 Saison Zurücksetzen</button>
+
+    <!-- Passwortfeld für den "Alles Löschen"-Button -->
+    <input type="password" id="resetPasswordAll" placeholder="Passwort für Alles Löschen">
+    <button id="resetButtonAll" onclick="checkPasswordAll()" disabled>❌ Alles Löschen</button>
+
+    <!-- Passwortfeld für den "Saison Zurücksetzen"-Button -->
+    <input type="password" id="resetPasswordSeason" placeholder="Passwort für Saison Zurücksetzen">
+    <button id="resetButtonSeason" onclick="checkPasswordSeason()" disabled>🔄 Saison Zurücksetzen</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
